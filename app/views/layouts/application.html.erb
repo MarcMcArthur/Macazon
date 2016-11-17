@@ -2,13 +2,33 @@
 <html>
 <head>
   <title>Macazon</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body class='<%= controller.controller_name %>'>
+  <div id="banner">
+    <%= image_tag("logo.png") %>
+    <div id="title">
+      <%= @page_title || "Macazon" %>
+    </div>
+  </div>
+  <br />
+  <div id="colums">
+    <div id="side">
+      <ul>
+        <li><a href="http://www....">Home</a></li>
+        <li><a href="http://www..../faq">Questions</a></li>
+        <li><a href="http://www..../news">News</a></li>
+        <li><a href="http://www..../contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
 
-<%= yield %>
+  <div id="main">
+    <%= yield %>
+  </div>
+
 
 </body>
 </html>
